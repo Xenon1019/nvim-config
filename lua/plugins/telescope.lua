@@ -7,12 +7,14 @@ return {
     {
         'nvim-telescope/telescope-ui-select.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
-        opts = {
-            extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown {}
+        opts = function()
+            return {
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown {}
+                    }
                 }
             }
-        }
+        end
     }
 }
